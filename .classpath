@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.osgi_3.8.1.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.osgi.source_3.8.1.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.core.commands_3.6.1.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.commands.source_3.6.1.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.equinox.common_3.6.100.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.common.source_3.6.100.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.equinox.registry_3.5.200.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.equinox.registry.source_3.5.200.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.core.runtime_3.8.0.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.core.runtime.source_3.8.0.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.text_3.5.200.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.text.source_3.5.200.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.jface_3.8.0.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.jface.source_3.8.0.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.jface.text_3.8.1.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.jface.text.source_3.8.1.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.ui.workbench_3.8.1.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.workbench.source_3.8.1.dist.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar" sourcepath="/usr/lib/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar"/>
+	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.ui.forms_3.5.200.dist.jar" sourcepath="/usr/lib/eclipse/dropins/sdk/plugins/org.eclipse.ui.forms.source_3.5.200.dist.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/JOGL"/>
+	<classpathentry exported="true" kind="lib" path="/usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar"/>
+	<classpathentry exported="true" kind="lib" path="app/swt-gtk-linux-x86_64.jar" sourcepath="/var/scratch/christian/jogamp-all-platforms/swt-3.8.1-linux-x86_64-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="http://www.eclipse.org/swt/javadoc.php"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/var/scratch/christian/jogamp-all-platforms/opal-1.0.3.jar" sourcepath="/var/scratch/christian/jogamp-all-platforms/opal-1.0.3-src.zip"/>
+	<classpathentry kind="lib" path="/var/scratch/christian/jogamp-all-platforms/org.swtchart.ext_0.10.0.v20160212.jar"/>
+	<classpathentry kind="lib" path="/var/scratch/christian/jogamp-all-platforms/org.swtchart_0.10.0.v20160212.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JOML"/>
+	<classpathentry kind="lib" path="/home/christian/workspace/Java/SWT_JOGLexample/app/joml-2.10-0.1.jar"/>
+	<classpathentry kind="lib" path="/home/christian/workspace/Java/SWT_JOGLexample/app/commons-math3-3.6.1/commons-math3-3.6.1.jar" sourcepath="/home/christian/workspace/Java/SWT_JOGLexample/app/commons-math3-3.6.1/commons-math3-3.6.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/christian/workspace/Java/SWT_JOGLexample/app/commons-math3-3.6.1/commons-math3-3.6.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

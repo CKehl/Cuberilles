@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="SWT_JOGLexample">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../usr/lib/eclipse"/>
+    <property name="JOGL.location" value="../JOGL"/>
+    <property name="JOML.location" value="../JOML"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="JOGL.classpath">
+        <pathelement location="${JOGL.location}/bin"/>
+        <pathelement location="${JOGL.location}/../../../../../var/scratch/christian/jogamp-all-platforms/jar/gluegen-rt.jar"/>
+        <pathelement location="${JOGL.location}/../../../../../var/scratch/christian/jogamp-all-platforms/jar/jogl-all.jar"/>
+        <pathelement location="${JOGL.location}/../../../../../var/scratch/christian/jogamp-all-platforms/jar/jocl.jar"/>
+    </path>
+    <path id="JOML.classpath">
+        <pathelement location="${JOML.location}/bin"/>
+        <path refid="JOGL.classpath"/>
+    </path>
+    <path id="SWT_JOGLexample.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.osgi_3.8.1.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.core.commands_3.6.1.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.equinox.common_3.6.100.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.equinox.registry_3.5.200.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.core.runtime_3.8.0.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.text_3.5.200.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.jface_3.8.0.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.jface.text_3.8.1.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.ui.workbench_3.8.1.dist.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar"/>
+        <pathelement location="../../../../../usr/lib/eclipse/plugins/org.eclipse.ui.forms_3.5.200.dist.jar"/>
+        <path refid="JOGL.classpath"/>
+        <pathelement location="../../../../../usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar"/>
+        <pathelement location="app/swt-gtk-linux-x86_64.jar"/>
+        <pathelement location="../../../../../var/scratch/christian/jogamp-all-platforms/opal-1.0.3.jar"/>
+        <pathelement location="../../../../../var/scratch/christian/jogamp-all-platforms/org.swtchart.ext_0.10.0.v20160212.jar"/>
+        <pathelement location="../../../../../var/scratch/christian/jogamp-all-platforms/org.swtchart_0.10.0.v20160212.jar"/>
+        <pathelement location="../JOML/bin/joml-2.10-0.1.jar"/>
+        <path refid="JOML.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${JOGL.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${JOML.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${JOGL.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${JOML.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SWT_JOGLexample.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AppWindow (1)">
+        <java classname="de.ckehl.AppWindow" failonerror="true" fork="yes">
+            <classpath refid="SWT_JOGLexample.classpath"/>
+        </java>
+    </target>
+</project>

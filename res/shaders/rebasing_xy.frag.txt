@@ -1,0 +1,14 @@
+uniform sampler3D volTex;
+//uniform float level;
+uniform float baseValue;
+varying vec3 Texcoord;
+
+void main( void )
+{
+   float value = texture3D( volTex, Texcoord ).r;
+   //float v = clamp((value)/(level*2.0),0.0,1.0);
+   float diffValue = (value-clamp(abs(baseValue-value),0.0,value))/value;
+   
+    gl_FragColor = vec4(diffValue,diffValue,diffValue,1.0);
+    
+}
